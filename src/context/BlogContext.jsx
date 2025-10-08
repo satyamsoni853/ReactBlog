@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import Data from '../Data/Data.json';
+import axios from 'axios';
 
 export const BlogContext = createContext();
 
@@ -13,38 +13,23 @@ export const BlogProvider = ({ children }) => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
-  const addBlog = (newBlog) => {
-    setBlogs((prevBlogs) => [...prevBlogs, { id: prevBlogs.length + 1, ...newBlog }]);
-  };
-
+  // Fetch initial blogs using axios
   useEffect(() => {
-    const storedBlogs = localStorage.getItem('blogs');
-    try {
-      if (storedBlogs) {
-        const parsedBlogs = JSON.parse(storedBlogs);
-        if (parsedBlogs.length > 0) {
-          setBlogs(parsedBlogs);
-          setFilteredBlogs(parsedBlogs);
-        } else {
-          // If localStorage has an empty array, fall back to Data.json
-          setBlogs(Data);
-          setFilteredBlogs(Data);
-        }
-      } else {
-        // If no 'blogs' item in localStorage, use Data.json
-        setBlogs(Data);
-        setFilteredBlogs(Data);
+    const fetchBlogs = async () => {
+      try {
+        const response = await axios.get('https://app-latest-3.onrender.com/api/posts');
+        console.log("Fetched blogs:", response.data);
+        setBlogs(response.data);
+        setFilteredBlogs(response.data);
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
       }
-    } catch (error) {
-      console.error("Error parsing blogs from localStorage:", error);
-      // Fallback to Data.json if localStorage parsing fails
-      setBlogs(Data);
-      setFilteredBlogs(Data);
-    }
+    };
+    fetchBlogs();
   }, []);
 
+  // Filtering logic
   useEffect(() => {
-    localStorage.setItem('blogs', JSON.stringify(blogs));
     if (category === 'all') {
       setFilteredBlogs(blogs);
     } else {
@@ -53,8 +38,46 @@ export const BlogProvider = ({ children }) => {
     }
   }, [category, blogs]);
 
+  // API Functions
+  const addBlog = (newPostFromServer) => {
+    setBlogs(prevBlogs => [newPostFromServer, ...prevBlogs]);
+  };
+
+  const updateBlog = async (id, updatedBlogData) => {
+    try {
+      const response = await axios.put(`https://app-latest-3.onrender.com/api/posts/${id}`, updatedBlogData);
+      const updatedPostFromServer = response.data;
+      setBlogs(prevBlogs => 
+        prevBlogs.map(blog => (blog.id === id ? updatedPostFromServer : blog))
+      );
+    } catch (error) {
+      console.error("Error updating blog:", error);
+    }
+  };
+
+  const deleteBlog = async (id) => {
+    try {
+      await axios.delete(`https://app-latest-3.onrender.com/api/posts/${id}`);
+      setBlogs(prevBlogs => prevBlogs.filter(blog => blog.id !== id));
+    } catch (error) {
+      console.error("Error deleting blog:", error);
+    }
+  };
+
   return (
-    <BlogContext.Provider value={{ filteredBlogs, setCategory, theme, toggleTheme, addBlog }}>
+    <BlogContext.Provider 
+      value={{ 
+        blogs,
+        filteredBlogs, 
+        category,
+        setCategory, 
+        theme, 
+        toggleTheme, 
+        addBlog, 
+        updateBlog, 
+        deleteBlog 
+      }}
+    >
       {children}
     </BlogContext.Provider>
   );

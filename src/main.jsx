@@ -1,17 +1,18 @@
-import React from 'react' 
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import { BrowserRouter } from 'react-router-dom'
-import { BlogProvider } from './context/BlogContext'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css'; // Make sure you have your Tailwind CSS setup here
+import './App.css'; // Import App.css for Tailwind CSS
+import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+import { BlogProvider } from './context/BlogContext';
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
     <BrowserRouter>
       <BlogProvider>
         <App />
       </BlogProvider>
     </BrowserRouter>
-  </StrictMode>,
-)
+  </React.StrictMode>
+);

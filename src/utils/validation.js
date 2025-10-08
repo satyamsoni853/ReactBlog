@@ -1,42 +1,22 @@
-
-
-/**
- * Validates the form data for the BlogForm.
- * @param {object} formData 
- * @returns {object}
- */
 export const validateBlogForm = (formData) => {
-  const errors = {};
+    const errors = {};
+    const urlPattern = new RegExp('^(https?|ftp)://[^\\s/$.?#].[^\\s]*$', 'i');
 
+    if (!formData.title || formData.title.trim().length < 3) {
+        errors.title = "Title is required and must be at least 3 characters long.";
+    }
+    if (!formData.bloggername || formData.bloggername.trim().length < 3) {
+        errors.bloggername = "Blogger name is required and must be at least 3 characters long.";
+    }
+    if (!formData.category || formData.category.trim() === '') {
+        errors.category = "Category is required.";
+    }
+    if (!formData.imageurl || !urlPattern.test(formData.imageurl)) {
+        errors.imageurl = "A valid image URL is required.";
+    }
+    if (!formData.description || formData.description.trim().length < 10) {
+        errors.description = "Description is required and must be at least 10 characters long.";
+    }
 
-  if (!formData.title.trim()) {
-    errors.title = 'Title is required.';
-  } else if (formData.title.trim().length < 5) {
-    errors.title = 'Title must be at least 5 characters long.';
-  }
-
-
-  if (!formData.blogger_name.trim()) {
-    errors.blogger_name = 'Blogger name is required.';
-  }
-
-  if (!formData.category) {
-    errors.category = 'Please select a category.';
-  }
-
-
-  const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
-  if (!formData.image_url.trim()) {
-    errors.image_url = 'Image URL is required.';
-  } else if (!urlRegex.test(formData.image_url.trim())) {
-    errors.image_url = 'Please enter a valid URL.';
-  }
-
-  if (!formData.description.trim()) {
-    errors.description = 'Description is required.';
-  } else if (formData.description.trim().length < 20) {
-    errors.description = 'Description must be at least 20 characters long.';
-  }
-
-  return errors;
+    return errors;
 };

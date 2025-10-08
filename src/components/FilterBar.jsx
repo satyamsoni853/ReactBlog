@@ -1,40 +1,29 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { BlogContext } from '../context/BlogContext';
 
 const FilterBar = () => {
-  const { theme, setCategory } = useContext(BlogContext);
-  const [isOpen, setIsOpen] = useState(false);
-  const categories = ["All", "Entertainment", "Technology", "Sports", "Business", "Health", "Science"];
+    const { category, setCategory, theme } = useContext(BlogContext);
+    const categories = ["All", "Entertainment", "Technology", "Sports", "Business", "Health", "Science"];
 
-  const handleFilterClick = (category) => {
-    setCategory(category.toLowerCase());
-    setIsOpen(false);
-  };
-
-  return (
-    <div className={`relative p-4 ${theme === 'light' ? 'bg-gray-100' : 'bg-gray-800'}`}>
-      <div className="md:hidden flex justify-center">
-        <button 
-          onClick={() => setIsOpen(!isOpen)}
-          className={`font-medium transition-colors ${theme === 'light' ? 'text-yellow-500 hover:text-yellow-600' : 'text-yellow-400 hover:text-yellow-500'}`}
-        >
-          Filter Categories
-        </button>
-      </div>
-      <ul className={`absolute md:relative top-full left-0 w-full md:w-auto md:flex md:justify-center list-none gap-6 m-0 p-4 md:p-0 ${isOpen ? 'block' : 'hidden'} ${theme === 'light' ? 'bg-gray-100' : 'bg-gray-800'}`}>
-        {categories.map((category) => (
-          <li key={category} className="text-center">
-            <button 
-              onClick={() => handleFilterClick(category)}
-              className={`no-underline font-medium transition-colors w-full py-2 md:py-0 ${theme === 'light' ? 'text-yellow-500 hover:text-yellow-600' : 'text-yellow-400 hover:text-yellow-500'}`}
-            >
-              {category}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+    return (
+        <div className={`p-4 rounded-lg shadow-lg border ${theme === 'light' ? 'bg-white border-gray-200' : 'bg-gray-800 border-gray-700'} flex justify-center flex-wrap gap-2 sm:gap-4`}>
+            {categories.map((cat) => (
+                <button
+                    key={cat}
+                    onClick={() => setCategory(cat.toLowerCase())}
+                    className={`py-2 px-4 rounded-full font-semibold transition-colors text-sm sm:text-base ${
+                        category === cat.toLowerCase()
+                            ? 'bg-yellow-500 text-black'
+                            : theme === 'light'
+                            ? 'bg-white text-gray-700 hover:bg-gray-200 border border-gray-300'
+                            : 'bg-gray-700 text-gray-200 hover:bg-gray-600 border border-gray-600'
+                    }`}
+                >
+                    {cat}
+                </button>
+            ))}
+        </div>
+    );
 };
 
 export default FilterBar;

@@ -9,7 +9,6 @@ const Footer = () => {
       <div className="container mx-auto text-center">
         <p className="text-lg font-semibold">Blog Geek</p>
         <p className="text-sm mt-2">© 2025 Blog Geek. All rights reserved.</p>
- 
       </div>
     </footer>
   );
