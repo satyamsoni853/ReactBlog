@@ -13,12 +13,38 @@ export const BlogProvider = ({ children }) => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
+  const addBlog = (newBlog) => {
+    setBlogs((prevBlogs) => [...prevBlogs, { id: prevBlogs.length + 1, ...newBlog }]);
+  };
+
   useEffect(() => {
-    setBlogs(Data);
-    setFilteredBlogs(Data);
+    const storedBlogs = localStorage.getItem('blogs');
+    try {
+      if (storedBlogs) {
+        const parsedBlogs = JSON.parse(storedBlogs);
+        if (parsedBlogs.length > 0) {
+          setBlogs(parsedBlogs);
+          setFilteredBlogs(parsedBlogs);
+        } else {
+          // If localStorage has an empty array, fall back to Data.json
+          setBlogs(Data);
+          setFilteredBlogs(Data);
+        }
+      } else {
+        // If no 'blogs' item in localStorage, use Data.json
+        setBlogs(Data);
+        setFilteredBlogs(Data);
+      }
+    } catch (error) {
+      console.error("Error parsing blogs from localStorage:", error);
+      // Fallback to Data.json if localStorage parsing fails
+      setBlogs(Data);
+      setFilteredBlogs(Data);
+    }
   }, []);
 
   useEffect(() => {
+    localStorage.setItem('blogs', JSON.stringify(blogs));
     if (category === 'all') {
       setFilteredBlogs(blogs);
     } else {
@@ -28,7 +54,7 @@ export const BlogProvider = ({ children }) => {
   }, [category, blogs]);
 
   return (
-    <BlogContext.Provider value={{ filteredBlogs, setCategory, theme, toggleTheme }}>
+    <BlogContext.Provider value={{ filteredBlogs, setCategory, theme, toggleTheme, addBlog }}>
       {children}
     </BlogContext.Provider>
   );

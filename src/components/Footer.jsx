@@ -9,11 +9,7 @@ const Footer = () => {
       <div className="container mx-auto text-center">
         <p className="text-lg font-semibold">Blog Geek</p>
         <p className="text-sm mt-2">© 2025 Blog Geek. All rights reserved.</p>
-        <div className="flex justify-center gap-6 mt-4">
-          <a href="#" className={`hover:text-blue-400 ${theme === 'light' ? 'text-gray-600' : 'text-gray-300'}`}>Facebook</a>
-          <a href="#" className={`hover:text-blue-400 ${theme === 'light' ? 'text-gray-600' : 'text-gray-300'}`}>Twitter</a>
-          <a href="#" className={`hover:text-blue-400 ${theme === 'light' ? 'text-gray-600' : 'text-gray-300'}`}>Instagram</a>
-        </div>
+ 
       </div>
     </footer>
   );
