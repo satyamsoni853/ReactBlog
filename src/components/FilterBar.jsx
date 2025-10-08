@@ -16,7 +16,7 @@ const FilterBar = () => {
       <div className="md:hidden flex justify-center">
         <button 
           onClick={() => setIsOpen(!isOpen)}
-          className={`font-medium transition-colors ${theme === 'light' ? 'text-gray-600 hover:text-blue-600' : 'text-gray-300 hover:text-blue-400'}`}
+          className={`font-medium transition-colors ${theme === 'light' ? 'text-yellow-500 hover:text-yellow-600' : 'text-yellow-400 hover:text-yellow-500'}`}
         >
           Filter Categories
         </button>
@@ -26,7 +26,7 @@ const FilterBar = () => {
           <li key={category} className="text-center">
             <button 
               onClick={() => handleFilterClick(category)}
-              className={`no-underline font-medium transition-colors w-full py-2 md:py-0 ${theme === 'light' ? 'text-gray-600 hover:text-blue-600' : 'text-gray-300 hover:text-blue-400'}`}
+              className={`no-underline font-medium transition-colors w-full py-2 md:py-0 ${theme === 'light' ? 'text-yellow-500 hover:text-yellow-600' : 'text-yellow-400 hover:text-yellow-500'}`}
             >
               {category}
             </button>

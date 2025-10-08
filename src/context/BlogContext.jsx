@@ -7,7 +7,7 @@ export const BlogProvider = ({ children }) => {
   const [blogs, setBlogs] = useState([]);
   const [filteredBlogs, setFilteredBlogs] = useState([]);
   const [category, setCategory] = useState('all');
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');

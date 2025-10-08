@@ -15,13 +15,13 @@ const Navbar = () => {
           : 'bg-gray-900 border-b border-gray-700'
       }`}>
         
-        <div className={`text-2xl font-bold ${theme === 'light' ? 'text-gray-800' : 'text-gray-100'}`}>
-          <a href="/">News Geek</a>
+        <div className={`text-2xl font-bold ${theme === 'light' ? 'text-yellow-500' : 'text-yellow-400'}`}>
+          <a href="/">Blog Geek</a>
         </div>
 
         <div className="flex gap-4 items-center">
           <Link to="/PostBlog">
-            <button className="py-2 px-4 bg-blue-600 text-white font-bold rounded-md hover:bg-blue-700 transition-colors">
+            <button className="py-2 px-4 bg-yellow-500 text-black font-bold rounded-md hover:bg-yellow-600 transition-colors">
               Post Blog
             </button>
           </Link>
