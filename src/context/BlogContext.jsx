@@ -17,7 +17,7 @@ export const BlogProvider = ({ children }) => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get('https://app-latest-3.onrender.com/api/posts');
+        const response = await axios.get('http://localhost:8000/posts');
         console.log("Fetched blogs:", response.data);
         setBlogs(response.data);
         setFilteredBlogs(response.data);
@@ -45,7 +45,7 @@ export const BlogProvider = ({ children }) => {
 
   const updateBlog = async (id, updatedBlogData) => {
     try {
-      const response = await axios.put(`https://app-latest-3.onrender.com/api/posts/${id}`, updatedBlogData);
+      const response = await axios.put(`http://localhost:8000/posts/${id}`, updatedBlogData);
       const updatedPostFromServer = response.data;
       setBlogs(prevBlogs => 
         prevBlogs.map(blog => (blog.id === id ? updatedPostFromServer : blog))
@@ -57,7 +57,7 @@ export const BlogProvider = ({ children }) => {
 
   const deleteBlog = async (id) => {
     try {
-      await axios.delete(`https://app-latest-3.onrender.com/api/posts/${id}`);
+      await axios.delete(`http://localhost:8000/posts/${id}`);
       setBlogs(prevBlogs => prevBlogs.filter(blog => blog.id !== id));
     } catch (error) {
       console.error("Error deleting blog:", error);

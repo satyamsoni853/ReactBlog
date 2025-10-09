@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import { BlogContext } from '../context/BlogContext';
 
 const BlogDetails = () => {
@@ -12,11 +13,8 @@ const BlogDetails = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const response = await fetch(`https://app-latest-3.onrender.com/api/posts/${id}`);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
+        const response = await axios.get(`http://localhost:8000/posts/${id}`);
+        const data = response.data;
         setBlog(data);
       } catch (err) {
         setError(err);

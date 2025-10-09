@@ -16,7 +16,7 @@ const BlogDetails = () => {
         const fetchBlog = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get(`https://app-latest-3.onrender.com/api/posts/${id}`);
+                const response = await axios.get(`http://localhost:8000/posts/${Number(id)}`);
                 setBlog(response.data);
                 setError(null);
             } catch (err) {
@@ -64,16 +64,16 @@ const BlogDetails = () => {
                 <article>
                     <h1 className="text-4xl md:text-5xl font-extrabold mb-4">{blog.title}</h1>
                     <div className="flex items-center mb-6">
-                        <img src={`https://i.pravatar.cc/50?u=${blog.blogger_name}`} alt={blog.blogger_name} className="w-12 h-12 rounded-full mr-4"/>
+                        <img src={`https://i.pravatar.cc/50?u=${blog.bloggername}`} alt={blog.bloggername} className="w-12 h-12 rounded-full mr-4"/>
                         <div>
-                            <p className="font-bold">{blog.blogger_name}</p>
+                            <p className="font-bold">{blog.bloggername}</p>
                             <p className={`text-sm ${theme === 'light' ? 'text-gray-600' : 'text-gray-400'}`}>
                                 Published in <span className="font-medium text-indigo-500">{blog.category}</span>
                             </p>
                         </div>
                     </div>
 
-                    <img src={blog.image_url} alt={blog.title} className="w-full h-auto max-h-[500px] object-cover rounded-lg shadow-lg mb-8"/>
+                    <img src={blog.imageurl} alt={blog.title} className="w-full h-auto max-h-[500px] object-cover rounded-lg shadow-lg mb-8"/>
                     
                     <div className="prose lg:prose-xl max-w-none" dangerouslySetInnerHTML={{ __html: blog.description.replace(/\n/g, '<br />') }} />
                 </article>

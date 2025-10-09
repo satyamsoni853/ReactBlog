@@ -34,7 +34,7 @@ const BlogForm = () => {
 
     if (Object.keys(validationErrors).length === 0) {
       try {
-        const response = await axios.post('https://app-latest-3.onrender.com/api/posts', formData);
+        const response = await axios.post('http://localhost:8000/posts', formData);
         addBlog(response.data);
         alert('Blog post created successfully!');
         navigate('/');

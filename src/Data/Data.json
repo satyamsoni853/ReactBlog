@@ -1,0 +1,95 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "The Future of Web Development",
+      "bloggername": "Alice Wonderland",
+      "category": "Technology",
+      "imageurl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+      "description": "A deep dive into the upcoming trends and technologies shaping the web development landscape.",
+      "published_date": "2023-10-26"
+    },
+    {
+      "id": 2,
+      "title": "Exploring the Art of Minimalist Design",
+      "bloggername": "John Doe",
+      "category": "Design",
+      "imageurl": "https://images.unsplash.com/photo-1503602642458-232111445657",
+      "description": "Minimalism is more than just an aesthetic — it’s a philosophy. Learn how simplicity drives impact.",
+      "published_date": "2023-11-05"
+    },
+    {
+      "id": 3,
+      "title": "Healthy Eating in a Busy World",
+      "bloggername": "Sophia Mehta",
+      "category": "Health",
+      "imageurl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
+      "description": "Practical tips and strategies to maintain a balanced diet even with a tight schedule.",
+      "published_date": "2023-12-10"
+    },
+    {
+      "id": 4,
+      "title": "Mastering React in 2025",
+      "bloggername": "David Kim",
+      "category": "Programming",
+      "imageurl": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+      "description": "A comprehensive guide to the latest React features and how to build modern applications.",
+      "published_date": "2025-01-15"
+    },
+    {
+      "id": 5,
+      "title": "Sustainable Travel: The New Way to Explore",
+      "bloggername": "Priya Sharma",
+      "category": "Travel",
+      "imageurl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+      "description": "Discover how travelers can minimize their carbon footprint while enjoying the beauty of the world.",
+      "published_date": "2024-02-20"
+    },
+    {
+      "id": 6,
+      "title": "AI in Everyday Life",
+      "bloggername": "Michael Lee",
+      "category": "Artificial Intelligence",
+      "imageurl": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
+      "description": "From smart assistants to predictive analytics — AI is changing how we live and work.",
+      "published_date": "2024-03-10"
+    },
+    {
+      "id": 7,
+      "title": "Building Mental Resilience",
+      "bloggername": "Ananya Gupta",
+      "category": "Lifestyle",
+      "imageurl": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e",
+      "description": "Techniques and habits to strengthen your mental health and thrive under pressure.",
+      "published_date": "2024-04-05"
+    },
+    {
+      "id": 8,
+      "title": "Cryptocurrency: Beyond Bitcoin",
+      "bloggername": "Ethan Brooks",
+      "category": "Finance",
+      "imageurl": "https://images.unsplash.com/photo-1624606249829-9b19d1a3b35c",
+      "description": "An overview of the evolving crypto ecosystem and emerging digital assets.",
+      "published_date": "2024-06-01"
+    },
+    {
+      "id": 9,
+      "title": "Top 10 Photography Hacks for Beginners",
+      "bloggername": "Lara White",
+      "category": "Photography",
+      "imageurl": "https://images.unsplash.com/photo-1504203700686-0f3c5dcd02f2",
+      "description": "Simple yet powerful tricks to improve your photography skills instantly.",
+      "published_date": "2024-07-22"
+    },
+    {
+      "id": 10,
+      "title": "How to Start a Successful Podcast",
+      "bloggername": "Ryan Patel",
+      "category": "Media",
+      "imageurl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7",
+      "description": "A beginner’s guide to planning, recording, and promoting your first podcast episode.",
+      "published_date": "2024-09-18"
+    }
+    
+  ]
+}
