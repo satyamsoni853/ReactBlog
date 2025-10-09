@@ -2,7 +2,7 @@
   "posts": [
     {
       "id": "1",
-      "title": "The Future of Web ",
+      "title": "The Future of Web development",
       "bloggername": "Satyam Soni",
       "category": "Technology",
       "imageurl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
@@ -79,6 +79,14 @@
       "category": "Entertainment",
       "imageurl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7",
       "description": "Image SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage Slash"
+    },
+    {
+      "id": "6bf4",
+      "title": "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS",
+      "bloggername": "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS",
+      "category": "Entertainment",
+      "imageurl": "https://www.pexels.com/photo/composition-of-yellow-flowers-in-white-vase-standing-on-table-11421980/",
+      "description": "Sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
     }
   ]
 }

@@ -13,7 +13,6 @@ export const BlogProvider = ({ children }) => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
-  // Fetch initial blogs using axios
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
@@ -28,7 +27,6 @@ export const BlogProvider = ({ children }) => {
     fetchBlogs();
   }, []);
 
-  // Filtering logic
   useEffect(() => {
     if (category === 'all') {
       setFilteredBlogs(blogs);

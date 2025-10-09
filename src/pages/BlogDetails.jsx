@@ -4,7 +4,6 @@ import axios from 'axios';
 import { BlogContext } from '../context/BlogContext';
 
 const BlogDetails = () => {
-    // ... (logic is unchanged)
     const { id } = useParams();
     const { blogs, theme } = useContext(BlogContext);
     const [blog, setBlog] = useState(null);
@@ -29,7 +28,6 @@ const BlogDetails = () => {
         };
 
         fetchBlog();
-        // Scroll to top when a new blog is loaded
         window.scrollTo(0, 0);
     }, [id]);
 
@@ -88,7 +86,6 @@ const BlogDetails = () => {
                 </article>
             </div>
 
-            {/* Related Blogs Section */}
             {relatedBlogs.length > 0 && (
                 <aside className="mt-16">
                     <h2 className="text-3xl font-bold mb-6">Related Posts</h2>
