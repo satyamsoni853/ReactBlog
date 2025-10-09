@@ -15,7 +15,7 @@ const BlogCard = ({ blog }) => {
 
   return (
     <Link to={`/blog/${id}`} className="block h-full group">
-      <div className={`rounded-lg overflow-hidden transition-all duration-300 h-full flex flex-col shadow-lg hover:shadow-2xl border ${theme === 'light' ? 'bg-white border-gray-200' : 'bg-gray-800 border-gray-700'} group-hover:-translate-y-1`}>
+      <div className={`rounded-lg overflow-hidden transition-all duration-300 h-full flex flex-col shadow-xl shadow-yellow-500/50 border ${theme === 'light' ? 'bg-white border-gray-200' : 'bg-gray-800 border-gray-700'} group-hover:-translate-y-1`}>
         <img src={imageurl} alt={title} className="w-full h-48 object-cover" />
         <div className="p-6 flex-grow flex flex-col">
           <div>

@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "title": "The Future of Web Development",
       "bloggername": "Alice Wonderland",
       "category": "Technology",
@@ -10,7 +10,7 @@
       "published_date": "2023-10-26"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Exploring the Art of Minimalist Design",
       "bloggername": "John Doe",
       "category": "Design",
@@ -19,7 +19,7 @@
       "published_date": "2023-11-05"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Healthy Eating in a Busy World",
       "bloggername": "Sophia Mehta",
       "category": "Health",
@@ -28,7 +28,7 @@
       "published_date": "2023-12-10"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Mastering React in 2025",
       "bloggername": "David Kim",
       "category": "Programming",
@@ -37,7 +37,7 @@
       "published_date": "2025-01-15"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Sustainable Travel: The New Way to Explore",
       "bloggername": "Priya Sharma",
       "category": "Travel",
@@ -46,7 +46,7 @@
       "published_date": "2024-02-20"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "AI in Everyday Life",
       "bloggername": "Michael Lee",
       "category": "Artificial Intelligence",
@@ -55,7 +55,7 @@
       "published_date": "2024-03-10"
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Building Mental Resilience",
       "bloggername": "Ananya Gupta",
       "category": "Lifestyle",
@@ -64,7 +64,7 @@
       "published_date": "2024-04-05"
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Cryptocurrency: Beyond Bitcoin",
       "bloggername": "Ethan Brooks",
       "category": "Finance",
@@ -73,7 +73,7 @@
       "published_date": "2024-06-01"
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "Top 10 Photography Hacks for Beginners",
       "bloggername": "Lara White",
       "category": "Photography",
@@ -82,14 +82,21 @@
       "published_date": "2024-07-22"
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "How to Start a Successful Podcast",
       "bloggername": "Ryan Patel",
       "category": "Media",
       "imageurl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7",
       "description": "A beginner’s guide to planning, recording, and promoting your first podcast episode.",
       "published_date": "2024-09-18"
+    },
+    {
+      "id": "c9e8",
+      "title": "How to Start a Successful Podcast",
+      "bloggername": "Satyam Soni",
+      "category": "Entertainment",
+      "imageurl": "https://www.pexels.com/photo/composition-of-yellow-flowers-in-white-vase-standing-on-table-11421980/",
+      "description": "A beginner’s guide to planning, recording, and promoting your first podcast episode.\""
     }
-    
   ]
 }
