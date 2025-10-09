@@ -64,24 +64,6 @@
       "published_date": "2024-04-05"
     },
     {
-      "id": "8",
-      "title": "Cryptocurrency: Beyond Bitcoin",
-      "bloggername": "Ethan Brooks",
-      "category": "Finance",
-      "imageurl": "https://images.unsplash.com/photo-1624606249829-9b19d1a3b35c",
-      "description": "An overview of the evolving crypto ecosystem and emerging digital assets.",
-      "published_date": "2024-06-01"
-    },
-    {
-      "id": "9",
-      "title": "Top 10 Photography Hacks for Beginners",
-      "bloggername": "Lara White",
-      "category": "Photography",
-      "imageurl": "https://images.unsplash.com/photo-1504203700686-0f3c5dcd02f2",
-      "description": "Simple yet powerful tricks to improve your photography skills instantly.",
-      "published_date": "2024-07-22"
-    },
-    {
       "id": "10",
       "title": "How to Start a Successful Podcast",
       "bloggername": "Ryan Patel",
@@ -91,12 +73,12 @@
       "published_date": "2024-09-18"
     },
     {
-      "id": "c9e8",
-      "title": "How to Start a Successful Podcast",
+      "id": "d25a",
+      "title": "Image Slash",
       "bloggername": "Satyam Soni",
       "category": "Entertainment",
-      "imageurl": "https://www.pexels.com/photo/composition-of-yellow-flowers-in-white-vase-standing-on-table-11421980/",
-      "description": "A beginner’s guide to planning, recording, and promoting your first podcast episode.\""
+      "imageurl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7",
+      "description": "Image SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage Slash"
     }
   ]
 }

@@ -12,7 +12,7 @@ const Navbar = () => {
         ? 'bg-gray-100/80 border-b border-gray-200 backdrop-blur-md' 
         : 'bg-gray-900/80 border-b border-gray-700 backdrop-blur-md'
     }`}>
-      <nav className="container mx-auto flex justify-between items-center p-4 font-sans">
+      <nav className="container mx-auto flex flex-wrap justify-between items-center p-4 font-sans">
         <div className={`text-2xl font-bold ${theme === 'light' ? 'text-yellow-500' : 'text-yellow-400'}`}>
           <Link to="/">Blog Geek</Link>
         </div>

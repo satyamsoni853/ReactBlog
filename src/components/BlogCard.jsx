@@ -25,9 +25,14 @@ const BlogCard = ({ blog }) => {
             </h3>
             <p className={`text-base ${theme === 'light' ? 'text-gray-700' : 'text-gray-300'}`}>
               {truncateText(description, 100)}
+              {description && description.length > 100 && (
+                <Link to={`/blog/${id}`} className="text-yellow-500 hover:underline ml-1">
+                  See More
+                </Link>
+              )}
             </p>
           </div>
-          <div className="mt-auto flex items-center pt-4 border-t ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}">
+          <div className="mt-auto flex items-center pt-4  ">
           
             <div>
               <p className={`font-semibold ${theme === 'light' ? 'text-gray-900' : 'text-white'}`}>{bloggername}</p>

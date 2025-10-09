@@ -17,7 +17,7 @@ const BlogDetails = () => {
         const fetchBlog = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get(`http://localhost:8000/posts/${Number(id)}`);
+                const response = await axios.get(`http://localhost:8000/posts/${id}`);
                 setBlog(response.data);
                 setError(null);
             } catch (err) {
@@ -63,11 +63,11 @@ const BlogDetails = () => {
 
             <div className={`p-6 sm:p-10 rounded-lg shadow-xl border ${theme === 'light' ? 'bg-white border-gray-200' : 'bg-gray-800 border-gray-700'}`}>
                 <article>
-                    <div className="flex justify-between items-center mb-4">
-                        <h1 className="text-4xl md:text-5xl font-extrabold">{blog.title}</h1>
+                    <div className="flex flex-wrap justify-between items-center gap-4 mb-4">
+                        <h1 className="text-4xl md:text-5xl font-extrabold break-words max-w-full">{blog.title}</h1>
                         <button
                             onClick={() => navigate(`/edit-blog/${id}`)}
-                            className="px-4 py-2 bg-yellow-600 text-white font-semibold rounded-md hover:bg-yellow-700 transition-colors"
+                            className="px-4 py-2 bg-yellow-600 text-white font-semibold rounded-md hover:bg-yellow-700 transition-colors flex-shrink-0"
                         >
                             Edit
                         </button>

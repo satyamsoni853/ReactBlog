@@ -32,11 +32,16 @@ const BlogForm = ({ initialData, onSubmit }) => {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
+      const dataToSubmit = { ...formData };
+      if (dataToSubmit.imageurl) {
+        dataToSubmit.imageurl = dataToSubmit.imageurl.replace(/\\"$/, '').trim();
+      }
+
       if (onSubmit) {
-        onSubmit(formData);
+        onSubmit(dataToSubmit);
       } else {
         try {
-          const response = await axios.post('http://localhost:8000/posts', formData);
+          const response = await axios.post('http://localhost:8000/posts', dataToSubmit);
           addBlog(response.data);
           alert('Blog post created successfully!');
           navigate('/');
