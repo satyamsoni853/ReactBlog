@@ -51,7 +51,7 @@
       "bloggername": "Michael Lee",
       "category": "Artificial Intelligence",
       "imageurl": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
-      "description": "From smart assistants to predictive analytics — AI is changing how we live and work.",
+      "description": "From smart assistants to predictive analytics — AI is changing how we live and work.From smart assistants to predictive analytics — AI is changing how we live and work.",
       "published_date": "2024-03-10"
     },
     {
@@ -79,14 +79,6 @@
       "category": "Entertainment",
       "imageurl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7",
       "description": "Image SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage SlashImage Slash"
-    },
-    {
-      "id": "6bf4",
-      "title": "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS",
-      "bloggername": "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS",
-      "category": "Entertainment",
-      "imageurl": "https://www.pexels.com/photo/composition-of-yellow-flowers-in-white-vase-standing-on-table-11421980/",
-      "description": "Sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
     }
   ]
 }

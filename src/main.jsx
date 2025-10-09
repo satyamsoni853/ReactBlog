@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css'; // Make sure you have your Tailwind CSS setup here
-import './App.css'; // Import App.css for Tailwind CSS
+import './index.css';
+import './App.css'; 
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { BlogProvider } from './context/BlogContext';

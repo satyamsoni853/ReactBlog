@@ -89,9 +89,10 @@ const BlogDetails = () => {
           </div>
           <div className="flex items-center mb-4">
             <p
-              className={`text-lg ${
+              className={`text-lg min-w-0 ${
                 theme === "light" ? "text-gray-600" : "text-gray-400"
               }`}
+              style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}
             >
               By {bloggername}
             </p>
@@ -105,7 +106,7 @@ const BlogDetails = () => {
             </p>
           </div>
           <div
-            className={`prose max-w-none break-words ${
+            className={`prose max-w-none break-words min-w-0 ${
               theme === "light" ? "text-gray-800" : "text-gray-200"
             }`}
             style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}

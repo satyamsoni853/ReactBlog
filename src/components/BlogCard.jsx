@@ -6,6 +6,7 @@ const BlogCard = ({ blog }) => {
   const { theme } = useContext(BlogContext);
   const { id, imageurl, category, title, bloggername, description } = blog;
 
+
   const truncateText = (text, maxLength) => {
     if (!text || text.length <= maxLength) {
       return text;
@@ -13,45 +14,59 @@ const BlogCard = ({ blog }) => {
     return text.substring(0, maxLength).trim() + "...";
   };
 
+  const DESCRIPTION_MAX_LENGTH = 100; 
+
+  const textColor = theme === 'light' ? 'text-gray-700' : 'text-gray-300';
+  
+
   return (
-    <Link to={`/blog/${id}`} className="block group">
+    <Link to={`/blog/${id}`} className="block group h-full">
       <div
-        className={`rounded-lg transition-all duration-300 flex flex-col shadow-xl shadow-yellow-500/50 border ${
+        className={`flex flex-col h-full rounded-lg overflow-hidden border transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl ${
           theme === "light"
-            ? "bg-white border-gray-200"
-            : "bg-gray-800 border-gray-700"
-        } group-hover:-translate-y-1`}
+            ? "bg-white border-gray-200 shadow-lg"
+            : "bg-gray-800 border-gray-700 shadow-lg shadow-gray-900/50"
+        }`}
       >
-        <img src={imageurl} alt={title} className="w-full h-48 object-cover" />
-        <div className="p-6 flex-grow flex flex-col">
-          <div>
-            <p className="text-sm font-medium text-indigo-500">{category}</p>
+        <div className="relative">
+          <img src={imageurl} alt={title} className="w-full h-48 object-cover" />
+          <span className="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+            {category}
+          </span>
+        </div>
+
+        <div className="p-5 flex flex-col flex-grow">
+          <div className="flex-grow">
             <h3
-              className={`text-xl font-bold mt-2 mb-2 h-14 overflow-hidden ${
-                theme === "light" ? "text-gray-800" : "text-white"
+              className={`text-lg font-bold mb-2 line-clamp-2 ${
+                theme === "light" ? "text-gray-900" : "text-white"
               }`}
             >
-              {truncateText(title, 50)}
+              {title}
             </h3>
-            <p
-              className={`text-base w-full whitespace-normal ${
-                theme === "light" ? "text-gray-700" : "text-gray-300"
-              }`}
-              style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}
-            >
-              {description}
+            
+       
+            <p className={`text-sm mb-4 h-[3.5rem] ${textColor}`}>
+              {truncateText(description, DESCRIPTION_MAX_LENGTH)}
+              {description && description.length > DESCRIPTION_MAX_LENGTH && (
+                <span className="text-yellow-500 font-bold ml-1">
+                  See More
+                </span>
+              )}
             </p>
+
           </div>
-          <div className="mt-auto flex items-center pt-4  ">
+
+          <div className={`mt-auto flex items-center justify-between pt-4 border-t ${theme === 'light' ? 'border-gray-200' : 'border-gray-700'}`}>
             <div>
-              <p
-                className={`font-semibold ${
-                  theme === "light" ? "text-gray-900" : "text-white"
-                }`}
-              >
+              <p className={`font-semibold text-sm ${theme === 'light' ? 'text-gray-800' : 'text-gray-200'}`}>
                 {bloggername}
               </p>
-              <p className="text-sm text-yellow-500">Read More &rarr;</p>
+            </div>
+            <div>
+              <p className="text-yellow-500 text-sm font-semibold group-hover:underline">
+                Read More &rarr;
+              </p>
             </div>
           </div>
         </div>
