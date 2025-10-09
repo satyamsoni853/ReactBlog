@@ -14,9 +14,9 @@ const BlogCard = ({ blog }) => {
   };
 
   return (
-    <Link to={`/blog/${id}`} className="block h-full group">
+    <Link to={`/blog/${id}`} className="block group">
       <div
-        className={`rounded-lg overflow-hidden transition-all duration-300 h-full flex flex-col shadow-xl shadow-yellow-500/50 border ${
+        className={`rounded-lg transition-all duration-300 flex flex-col shadow-xl shadow-yellow-500/50 border ${
           theme === "light"
             ? "bg-white border-gray-200"
             : "bg-gray-800 border-gray-700"
@@ -34,19 +34,12 @@ const BlogCard = ({ blog }) => {
               {truncateText(title, 50)}
             </h3>
             <p
-              className={`text-base ${
+              className={`text-base w-full whitespace-normal ${
                 theme === "light" ? "text-gray-700" : "text-gray-300"
               }`}
+              style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}
             >
-              {truncateText(description, 100)}
-              {description && description.length > 100 && (
-                <Link
-                  to={`/blog/${id}`}
-                  className="text-yellow-500 hover:underline ml-1"
-                >
-                  See More
-                </Link>
-              )}
+              {description}
             </p>
           </div>
           <div className="mt-auto flex items-center pt-4  ">

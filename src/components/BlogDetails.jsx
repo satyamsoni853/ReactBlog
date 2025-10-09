@@ -105,9 +105,10 @@ const BlogDetails = () => {
             </p>
           </div>
           <div
-            className={`prose max-w-none ${
+            className={`prose max-w-none break-words ${
               theme === "light" ? "text-gray-800" : "text-gray-200"
             }`}
+            style={{ wordWrap: 'break-word', overflowWrap: 'break-word' }}
           >
             {description}
           </div>
