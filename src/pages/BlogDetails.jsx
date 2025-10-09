@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { BlogContext } from '../context/BlogContext';
 
@@ -11,6 +11,7 @@ const BlogDetails = () => {
     const [relatedBlogs, setRelatedBlogs] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchBlog = async () => {
@@ -62,9 +63,17 @@ const BlogDetails = () => {
 
             <div className={`p-6 sm:p-10 rounded-lg shadow-xl border ${theme === 'light' ? 'bg-white border-gray-200' : 'bg-gray-800 border-gray-700'}`}>
                 <article>
-                    <h1 className="text-4xl md:text-5xl font-extrabold mb-4">{blog.title}</h1>
+                    <div className="flex justify-between items-center mb-4">
+                        <h1 className="text-4xl md:text-5xl font-extrabold">{blog.title}</h1>
+                        <button
+                            onClick={() => navigate(`/edit-blog/${id}`)}
+                            className="px-4 py-2 bg-yellow-600 text-white font-semibold rounded-md hover:bg-yellow-700 transition-colors"
+                        >
+                            Edit
+                        </button>
+                    </div>
                     <div className="flex items-center mb-6">
-                        <img src={`https://i.pravatar.cc/50?u=${blog.bloggername}`} alt={blog.bloggername} className="w-12 h-12 rounded-full mr-4"/>
+                  
                         <div>
                             <p className="font-bold">{blog.bloggername}</p>
                             <p className={`text-sm ${theme === 'light' ? 'text-gray-600' : 'text-gray-400'}`}>

@@ -6,7 +6,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import PostBlogPage from './pages/PostBlogPage';
-import BlogDetails from './pages/BlogDetails'; // 👈 1. Import the new component
+import BlogDetails from './pages/BlogDetails';
+import EditBlogPage from './pages/EditBlogPage';
 
 function App() {
   const { theme } = useContext(BlogContext);
@@ -18,7 +19,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/post-blog" element={<PostBlogPage />} />
-          <Route path="/blog/:id" element={<BlogDetails />} /> {/* 👈 2. Add this new route */}
+          <Route path="/blog/:id" element={<BlogDetails />} />
+          <Route path="/edit-blog/:id" element={<EditBlogPage />} />
         </Routes>
       </main>
       <Footer />

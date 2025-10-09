@@ -4,11 +4,10 @@ import axios from 'axios';
 import { BlogContext } from '../context/BlogContext';
 import { validateBlogForm } from '../utils/validation.js';
 
-const BlogForm = () => {
+const BlogForm = ({ initialData, onSubmit }) => {
   const { theme, addBlog } = useContext(BlogContext);
   const navigate = useNavigate();
-  // ... (rest of the component state and logic is unchanged)
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState(initialData || {
     title: '',
     bloggername: '',
     category: '',
@@ -33,14 +32,18 @@ const BlogForm = () => {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      try {
-        const response = await axios.post('http://localhost:8000/posts', formData);
-        addBlog(response.data);
-        alert('Blog post created successfully!');
-        navigate('/');
-      } catch (error) {
-        console.error('Failed to create post:', error);
-        alert('Failed to create post. Please try again.');
+      if (onSubmit) {
+        onSubmit(formData);
+      } else {
+        try {
+          const response = await axios.post('http://localhost:8000/posts', formData);
+          addBlog(response.data);
+          alert('Blog post created successfully!');
+          navigate('/');
+        } catch (error) {
+          console.error('Failed to create post:', error);
+          alert('Failed to create post. Please try again.');
+        }
       }
     }
   };
@@ -49,7 +52,7 @@ const BlogForm = () => {
   return (
     <div className={`max-w-2xl mx-auto p-8 rounded-lg shadow-xl shadow-yellow-500/50 border ${theme === 'light' ? 'bg-white border-gray-200' : 'bg-gray-800 border-gray-700'}`}>
       <h2 className={`text-3xl font-bold text-center mb-8 ${theme === 'light' ? 'text-gray-800' : 'text-white'}`}>
-        Create a New Blog Post
+        {initialData ? 'Edit Blog Post' : 'Create a New Blog Post'}
       </h2>
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* All form fields go here... */}
@@ -87,8 +90,8 @@ const BlogForm = () => {
           {errors.description && <p className="mt-1 text-sm text-red-500">{errors.description}</p>}
         </div>
         <div className="text-center">
-          <button type="submit" className="py-3 px-6 bg-blue-600 text-white font-bold rounded-md hover:bg-blue-700 transition-colors">
-            Create Post
+          <button type="submit" className="py-3 px-6 bg-yellow-600 text-white font-bold rounded-md hover:bg-yellow-700 transition-colors">
+            {initialData ? 'Save Changes' : 'Create Post'}
           </button>
         </div>
       </form>

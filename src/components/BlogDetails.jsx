@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { BlogContext } from '../context/BlogContext';
 
@@ -9,6 +9,7 @@ const BlogDetails = () => {
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -46,7 +47,15 @@ const BlogDetails = () => {
         <img src={imageurl} alt={title} className="w-full h-96 object-cover rounded-lg shadow-lg" />
         <div className="mt-8">
           <p className={`text-lg font-medium ${theme === 'light' ? 'text-gray-500' : 'text-gray-400'}`}>{category}</p>
-          <h1 className={`text-5xl font-bold mt-4 mb-4 ${theme === 'light' ? 'text-gray-800' : 'text-white'}`}>{title}</h1>
+          <div className="flex justify-between items-center">
+            <h1 className={`text-5xl font-bold mt-4 mb-4 ${theme === 'light' ? 'text-gray-800' : 'text-white'}`}>{title}</h1>
+            <button
+              onClick={() => navigate(`/edit-blog/${id}`)}
+              className="px-4 py-2 bg-yellow-600 text-white font-semibold rounded-md hover:bg-yellow-700 transition-colors"
+            >
+              Edit
+            </button>
+          </div>
           <div className="flex items-center mb-4">
             <p className={`text-lg ${theme === 'light' ? 'text-gray-600' : 'text-gray-400'}`}>By {bloggername}</p>
             <span className="mx-2">•</span>
